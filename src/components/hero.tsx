@@ -1,3 +1,5 @@
-export const Hero = () => {
-  return <div>hero</div>;
+const Hero = () => {
+  return <div>Hero</div>;
 };
+
+export default Hero;
