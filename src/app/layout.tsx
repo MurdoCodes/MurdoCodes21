@@ -47,8 +47,8 @@ export default function RootLayout({
      jobTitle: "Full Stack Developer",
      url: "https://murdocodes.com",
      sameAs: [
-       "https://github.com/murdocodes",
-       "https://linkedin.com/in/your-linkedin-handle",
+       "https://github.com/MurdoCodes",
+       "LinkedIn	https://www.linkedin.com/in/lidel-kim-daddie/",
      ],
      knowsAbout: [
        "TypeScript",
@@ -63,7 +63,8 @@ export default function RootLayout({
        "Firebase",
      ],
      address: {
-       "@type": "PostalAddress",
+       "@type":
+         "49A Diamond Street, Pag-Ibig Height Catalunan Grande, Davao City, Philippines",
        addressCountry: "PH",
      },
    };
