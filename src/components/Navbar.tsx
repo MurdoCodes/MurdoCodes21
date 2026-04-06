@@ -8,27 +8,8 @@ const Navbar = () => {
   return (
     <>
       {/* Container for the entire navbar */}
-      <nav className="container mx-auto flex items-center justify-between py-4">
-        {/* Logo and Site Name */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 25,
-            delay: 0.3,
-            duration: 1.2,
-          }}
-          className="flex items-center gap-2"
-        >
-          <img src="/logo_processed.svg" alt="Logo" className="w-10" />
-          <h3 className="text-2xl font-bold hover:text-primary-hover hover:scale-[1.02] transition-colors duration-300 group">
-            MurdoCodes
-          </h3>
-        </motion.div>
-
-        {/* Navigation Links */}
+      <nav className="container mx-auto flex items-center justify-evenly py-4">
+        {/* Desktop Navigation Links */}
         <div className="lg:flex gap-4 hidden space-x-8">
           {navLinksArray.map((link, index) => (
             <motion.a
