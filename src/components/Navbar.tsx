@@ -4,9 +4,14 @@ import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
 import { navLinksArray } from "@/const/const";
 import { motion } from "framer-motion";
 
+
+
 const Navbar = () => {
   return (
     <>
+      {/**
+       * Navigation
+       */}
       {/* Container for the entire navbar */}
       <nav className="container mx-auto flex items-center justify-evenly py-4">
         {/* Desktop Navigation Links */}

@@ -2,19 +2,28 @@ import React from "react";
 import Navbar from "./Navbar";
 import Logo from "./Logo";
 
+
+
 const Header = () => {
   return (
+    <>
+    {/** Header
+        *  Logo/Site Nam
+        *  Navigation
+        * Social Links
+    */}
     <header className="absolute w-full z-50 transition-all duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
-        {/** Logo, Site Name Navigation*/}
 
         {/* Logo and Site Name */}
         <Logo />
 
         {/* Navigation and Social Icons */}
         <Navbar />
+
       </div>
     </header>
+    </>
   );
 };
 
