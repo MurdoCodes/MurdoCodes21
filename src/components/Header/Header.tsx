@@ -1,6 +1,7 @@
 import Logo from "./Logo";
 import Navbar from "./Navbar";
 import SocialLinks from "./SocialLinks";
+import HireMeButton from "./HireMeButton";
 
 const Header = () => {
   return (
@@ -11,7 +12,7 @@ const Header = () => {
        * Social Links
        */}
       <header className="absolute w-full z-50 transition-all duration-300">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20 gap-5">
           {/* Logo and Site Name */}
           <Logo />
 
@@ -20,6 +21,9 @@ const Header = () => {
 
           {/* Social Links */}
           <SocialLinks />
+
+          {/* Hire Me Button */}
+          <HireMeButton />
         </div>
       </header>
     </>
