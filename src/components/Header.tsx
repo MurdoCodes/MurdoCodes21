@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Logo from "./Logo";
+import SocialLinks from "./SocialLinks";
 
 
 
@@ -18,8 +19,11 @@ const Header = () => {
         {/* Logo and Site Name */}
         <Logo />
 
-        {/* Navigation and Social Icons */}
+        {/* Navigation */}
         <Navbar />
+
+        {/* Social Links */}
+        <SocialLinks />
 
       </div>
     </header>
