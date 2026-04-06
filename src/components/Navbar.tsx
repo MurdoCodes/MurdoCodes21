@@ -1,4 +1,5 @@
 "use client";
+import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
 
 import { navLinksArray } from "@/const/const";
 import { motion } from "framer-motion";
@@ -7,7 +8,7 @@ const Navbar = () => {
   return (
     <>
       {/* Container for the entire navbar */}
-      <nav className="container mx-auto flex items-center justify-between">
+      <nav className="container mx-auto flex items-center justify-between py-4">
         {/* Logo and Site Name */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -50,6 +51,54 @@ const Navbar = () => {
           ))}
         </div>
       </nav>
+
+      {/* Social icons - Desktop */}
+      <div className="md:flex gap-2 hidden items-center space-x-4">
+        <motion.a
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 1.5,
+            duration: 0.8,
+          }}
+          href="https://github.com/MurdoCodes"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
+        >
+          <FiGithub className="w-5 h-5" />
+        </motion.a>
+
+        <motion.a
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 1.5,
+            duration: 0.8,
+          }}
+          href="https://github.com/MurdoCodes"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
+        >
+          <FiLinkedin className="w-5 h-5" />
+        </motion.a>
+
+        <motion.a
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 1.5,
+            duration: 0.8,
+          }}
+          href="https://github.com/MurdoCodes"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
+        >
+          <FiInstagram className="w-5 h-5" />
+        </motion.a>
+      </div>
     </>
   );
 };
