@@ -108,6 +108,7 @@
 
 html, body {
   height: 100%;
+  width: 100%;
   scroll-behavior: smooth;
 }
 
@@ -118,6 +119,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
+
+  overflow-x: hidden; /* Prevent horizontal scroll from any overflow */
+  margin: 0; /* Center content if max-width is set on container */
+  padding: 0; /* Default horizontal padding for mobile */
+  position: relative; /* Establish stacking context for fixed elements */
 }
 
 /* Optional: Selection styling for brand consistency */
