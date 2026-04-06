@@ -1,9 +1,9 @@
-import Hero from "@/components/hero";
+import Navbar from "@/components/Navbar";
 
 const Home = () => {
   return (
-    <main>
-      <Hero />
+    <main className="container mx-auto px-4">
+      <Navbar />
     </main>
   );
 };
