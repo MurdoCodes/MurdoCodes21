@@ -14,7 +14,7 @@ const HireMeButton = () => {
           stiffness: 100,
           damping: 15,
         }}
-        className=" px-2 py-2 rounded-xl bg-linear-to-r from-primary to-primary-hover text-white font-bold hover:text-white hover:scale-[1.02] transition-all duration-500 md:w-30 md:h-10 text-sm md:text-base"
+        className="md:flex hidden px-2 py-2 rounded-xl bg-linear-to-r from-primary to-primary-hover text-white font-bold hover:text-white hover:scale-[1.02] transition-all duration-500 md:w-30 md:h-10 text-sm md:text-base"
       >
         Hire Me
       </motion.button>

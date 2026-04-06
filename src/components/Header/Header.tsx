@@ -2,6 +2,7 @@ import Logo from "./Logo";
 import Navbar from "./Navbar";
 import SocialLinks from "./SocialLinks";
 import HireMeButton from "./HireMeButton";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   return (
@@ -24,6 +25,9 @@ const Header = () => {
 
           {/* Hire Me Button */}
           <HireMeButton />
+
+          {/* Mobile Menu - Visible on small screens */}
+          <MobileMenu />
         </div>
       </header>
     </>
