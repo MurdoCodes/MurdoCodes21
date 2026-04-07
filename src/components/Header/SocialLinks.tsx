@@ -6,7 +6,7 @@ const SocialLinks = () => {
   return (
     <>
       {/* Social icons - Desktop */}
-      <div className="md:flex  hidden items-center space-x-4 gap-2">
+      <div className="md:flex hidden items-center space-x-4 gap-2">
         <motion.a
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
