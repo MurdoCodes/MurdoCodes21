@@ -1,7 +1,12 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const HireMeButton = () => {
+  const [contactFormOpen, setContactFormOpen] = useState(false);
+  const openContactForm = () => setContactFormOpen(true);
+  const closeContactForm = () => setContactFormOpen(false);
+
   return (
     <div className="hidden lg:flex">
       <motion.button

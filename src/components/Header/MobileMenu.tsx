@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { FiGithub, FiInstagram, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
 import { navLinksArray } from "@/const/const";
+import HireMeButton from "./HireMeButton";
+import ContactForm from "../ContactForm/ContactForm";
 
 const MobileMenu = () => {
   /**
@@ -13,6 +15,11 @@ const MobileMenu = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // Contact form state
+  const [contactFormOpen, setContactFormOpen] = useState(false);
+  const openContactForm = () => setContactFormOpen(true);
+  const closeContactForm = () => setContactFormOpen(false);
 
   return (
     <>
@@ -163,7 +170,8 @@ const MobileMenu = () => {
                   duration: 0.8,
                 }}
                 onClick={() => {
-                  toggleMenu;
+                  openContactForm();
+                  toggleMenu();
                 }}
                 className="bg-primary hover:bg-primary-hover text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 w-auto"
               >
@@ -173,8 +181,11 @@ const MobileMenu = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Contact Form - Visible when Hire Me is clicked */}
+      {contactFormOpen && <ContactForm closeContactForm={closeContactForm} />}
     </>
   );
-};
+};;;;;;
 
 export default MobileMenu;
