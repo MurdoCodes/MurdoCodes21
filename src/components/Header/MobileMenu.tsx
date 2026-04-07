@@ -27,7 +27,7 @@ const MobileMenu = () => {
           delay: 0.5,
           duration: 1.2,
         }}
-        className="md:hidden flex items-center"
+        className="lg:hidden flex items-center"
       >
         <motion.button
           whileTap={{ scale: 0.7 }}
@@ -54,14 +54,14 @@ const MobileMenu = () => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="
             overflow-hidden
-          bg-gray-900
+            bg-primary/10
             backdrop-blur-sm
             absolute
             z-40
             w-full
             top-full
             left-0
-            md:hidden
+            lg:hidden
             "
           >
             <nav

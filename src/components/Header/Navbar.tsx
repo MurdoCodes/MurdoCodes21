@@ -8,9 +8,19 @@ const Navbar = () => {
       {/**
        * Navigation
        */}
-      <nav className="container mx-auto flex items-center justify-evenly py-4">
+      <nav
+        className="
+        container 
+        mx-auto 
+        flex 
+        items-center 
+        justify-evenly 
+        py-4
+        lg:flex
+        "
+      >
         {/* Desktop Navigation Links */}
-        <div className="lg:flex gap-4 hidden space-x-8">
+        <div className="hidden lg:flex gap-4 space-x-8">
           {navLinksArray.map((link, index) => (
             <motion.a
               initial={{ opacity: 0, y: -20 }}
