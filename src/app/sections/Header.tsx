@@ -1,10 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import Logo from "./Logo";
-import Navbar from "./Navbar";
-import SocialLinks from "./SocialLinks";
-import HireMeButton from "./HireMeButton";
-import MobileMenu from "./MobileMenu";
+import Logo from "../../components/Header/Logo";
+import Navbar from "../../components/Header/Navbar";
+import SocialLinks from "../../components/Header/SocialLinks";
+import HireMeButton from "../../components/Header/HireMeButton";
+import MobileMenu from "../../components/Header/MobileMenu";
 
 const Header = () => {
   return (
