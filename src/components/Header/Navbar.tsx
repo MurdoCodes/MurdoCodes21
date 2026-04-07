@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
-    <div>
+    <>
       {/**
        * Navigation
        */}
@@ -36,7 +36,7 @@ const Navbar = () => {
           ))}
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 
