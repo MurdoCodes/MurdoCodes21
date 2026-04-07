@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiGithub, FiInstagram, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
 import { navLinksArray } from "@/const/const";
 
 const MobileMenu = () => {
@@ -44,7 +44,7 @@ const MobileMenu = () => {
         </motion.button>
       </motion.div>
 
-      {/* Mobile Menu List */}
+      {/* Mobile Menu Container */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -64,6 +64,7 @@ const MobileMenu = () => {
             lg:hidden
             "
           >
+            {/* Mobile Navigation Links */}
             <nav
               className="
               flex
@@ -83,7 +84,7 @@ const MobileMenu = () => {
                   text-white 
                   hover:text-primary-hover 
                   hover:scale-[1.02] 
-                  font-medium 
+                  font-semibold 
                   transition-colors 
                   duration-300 
                   group
@@ -95,6 +96,80 @@ const MobileMenu = () => {
                 </a>
               ))}
             </nav>
+
+            {/* Divider */}
+            <div className="border-t border-white/20" />
+
+            {/* Mobile Social Links */}
+            <div
+              className="
+                flex 
+                items-center
+                px-4
+                py-4
+              "
+            >
+              <motion.a
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  duration: 0.8,
+                }}
+                href="https://github.com/MurdoCodes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
+              >
+                <FiGithub className="w-5 h-5" />
+              </motion.a>
+
+              <motion.a
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  duration: 0.8,
+                }}
+                href="https://github.com/MurdoCodes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
+              >
+                <FiLinkedin className="w-5 h-5" />
+              </motion.a>
+
+              <motion.a
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  duration: 0.8,
+                }}
+                href="https://github.com/MurdoCodes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
+              >
+                <FiInstagram className="w-5 h-5" />
+              </motion.a>
+
+              {/* Hire Me Button */}
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  duration: 0.8,
+                }}
+                onClick={() => {
+                  toggleMenu;
+                }}
+                className="bg-primary hover:bg-primary-hover text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 w-auto"
+              >
+                Hire Me
+              </motion.button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
