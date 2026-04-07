@@ -70,6 +70,7 @@ const MobileMenu = () => {
                 }}
                 key={index}
                 href={`#${link.href}`}
+                onClick={toggleMenu}
                 className="
                   relative 
                   text-white 
