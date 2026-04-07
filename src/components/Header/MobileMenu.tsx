@@ -23,17 +23,40 @@ const MobileMenu = () => {
           className="text-white hover:text-primary"
         >
           {isOpen ? (
+            /* Close Icon */
             <FiX className="h-6 w-6" />
           ) : (
+            /* Menu Icon */
             <FiMenu className="h-6 w-6" />
           )}
         </motion.button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu List */}
       {isOpen && (
-        <div className="md:hidden overflow-hidden bg-primary shadow-lg px-4 py-5 space-y-5 absolute top-full left-0 w-full z-40">
-          <nav className="flex flex-col item-start justify-start space-y-4">
+        <div
+          className="
+            backdrop-blur-sm
+            absolute
+            z-40
+            w-full
+            top-full
+            left-0
+            px-4
+            py-4
+            overflow-hidden
+            md:hidden
+            text-left
+            "
+        >
+          <nav
+            className="
+              flex
+              flex-col
+              items-start
+              text-left!
+              "
+          >
             {navLinksArray.map((link, index) => (
               <motion.a
                 initial={{ opacity: 0, y: -20 }}
@@ -42,15 +65,25 @@ const MobileMenu = () => {
                   type: "spring",
                   stiffness: 100,
                   damping: 20,
-                  delay: 0.7 + index * 0.2,
-                  // duration: 1.2,
+                  // delay: 0.7 + index * 0.2,
+                  duration: 1,
                 }}
                 key={index}
                 href={`#${link.href}`}
-                className="relative text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
+                className="
+                  relative 
+                  text-white 
+                  hover:text-primary-hover 
+                  hover:scale-[1.02] 
+                  font-medium 
+                  transition-colors 
+                  duration-300 
+                  group
+                  py-2
+                  w-full
+                "
               >
                 {link.name}
-                <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-primary rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </motion.a>
             ))}
           </nav>

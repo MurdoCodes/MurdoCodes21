@@ -1,10 +1,6 @@
 "use client";
-import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
-
-import { navLinksArray } from "@/const/const";
 import { motion } from "framer-motion";
-
-
+import { navLinksArray } from "@/const/const";
 
 const Navbar = () => {
   return (
