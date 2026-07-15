@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* =============================================================================
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   Dark mode is DEFAULT (defined in :root). Light mode overrides below.
+   ============================================================================= */
+
+:root {
+  /* ── Backgrounds ── */
+  --background: #0B0F0E;           /* Main app background */
+  --background-secondary: #121716; /* Secondary surfaces, sidebars */
+  --card: #1A1F1D;                 /* Cards, modals, elevated surfaces */
+  
+  /* ── Accent Colors ── */
+  --primary: #6F7C5E;              /* Primary accent (olive green) */
+  --primary-hover: #9FB58A;        /* Button hover / active state */
+  --primary-soft: #8FA67A;         /* Soft highlights, badges */
+  
+  /* ── Text Colors ── */
+  --foreground: #FFFFFF;           /* Primary text */
+  --text-secondary: #CFCFCF;       /* Secondary text, captions */
+  --text-muted: #8A8F8D;           /* Muted/disabled text */
+  
+  /* ── Borders & Dividers ── */
+  --border: rgba(255, 255, 255, 0.08);   /* Subtle borders */
+  --border-strong: rgba(255, 255, 255, 0.12); /* Hover/focus borders */
+  
+  /* ── Gradients ── */
+  --gradient-overlay: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+  --gradient-accent: linear-gradient(90deg, rgba(111,124,94,0.2), transparent);
+  
+  /* ── Fonts (set via next/font in layout.tsx) ── */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+}
+
+/* ── Light Mode Overrides (prefers-color-scheme: light) ── */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Backgrounds */
+    --background: #F7F9F8;
+    --background-secondary: #FFFFFF;
+    --card: #FFFFFF;
+    
+    /* Accents (same primary, adjusted secondary tones) */
+    --primary: #6F7C5E;           /* Keep brand consistency */
+    --primary-hover: #5E6B4F;     /* Darker hover for light bg contrast */
+    --primary-soft: #EEF2EA;      /* Soft highlight for light mode */
+    
+    /* Text */
+    --foreground: #1A1F1D;
+    --text-secondary: #4B5563;
+    --text-muted: #6B7280;
+    
+    /* Borders */
+    --border: #E5E7EB;
+    --border-strong: #D1D5DB;
+    
+    /* Gradients (adjusted for light mode readability) */
+    --gradient-overlay: linear-gradient(180deg, rgba(247,249,248,0.6), rgba(247,249,248,0.95));
+    --gradient-accent: linear-gradient(90deg, rgba(111,124,94,0.15), transparent);
+  }
+}
+
+/* =============================================================================
+   2. TAILWIND @theme INLINE MAPPING
+   Maps CSS variables → Tailwind utility classes (build-time resolution)
+   ============================================================================= */
+
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-card: var(--card);
+  
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  
+  --color-foreground: var(--foreground);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  
+  /* Gradients (usable via arbitrary values or custom utilities) */
+  --gradient-overlay: var(--gradient-overlay);
+  --gradient-accent: var(--gradient-accent);
+  
+  /* Fonts */
+  --font-sans: var(--font-sans);
+  --font-family-display: var(--font-display);
+  --font-mono: var(--font-mono);
+
+  --background-image-hero-pattern: url('/hero.png');
+}
+
+/* =============================================================================
+   3. GLOBAL BASE STYLES
+   Recommended resets and defaults for consistency
+   ============================================================================= */
+
+*, *::before, *::after {
+  /* box-sizing: border-box; */
+  /* margin: auto; */
+  /* padding: auto; */
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+
+  overflow-x: hidden; /* Prevent horizontal scroll from any overflow */
+  margin: 0; /* Center content if max-width is set on container */
+  padding: 0; /* Default horizontal padding for mobile */
+  position: relative; /* Establish stacking context for fixed elements */
+}
+
+/* Optional: Selection styling for brand consistency */
+::selection {
+  background-color: var(--primary);
+  color: var(--foreground);
+}
+
+/* Optional: Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
