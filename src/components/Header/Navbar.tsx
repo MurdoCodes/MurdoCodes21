@@ -33,7 +33,7 @@ const Navbar = () => {
                 // duration: 1.2,
               }}
               key={index}
-              href={`#${link.href}`}
+              href={link.href}
               className="relative text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
             >
               {link.name}

@@ -25,18 +25,17 @@ const Header = () => {
           duration: 1.2,
         }}
         className="
-          absolute 
+          sticky
+          top-0
           w-full 
           transition-all 
           duration-300 
-          inset-x-0 
-          top-0 
           z-50
           bg-[#1C1B1B]/70
           backdrop-blur-sm
           "
       >
-        <div className="container px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20 gap-5 ">
+        <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20 gap-5">
           {/* Logo and Site Name */}
           <Logo />
 

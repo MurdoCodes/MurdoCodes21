@@ -2,10 +2,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { FiGithub, FiInstagram, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
-import { navLinksArray } from "@/const/const";
+import { FiMenu, FiX } from "react-icons/fi";
+import { navLinksArray, socialLinks } from "@/const/const";
 import HireMeButton from "./HireMeButton";
 import ContactForm from "../ContactForm/ContactForm";
+import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
+
+const iconMap = {
+  github: FiGithub,
+  linkedin: FiLinkedin,
+  instagram: FiInstagram,
+};
 
 const MobileMenu = () => {
   /**
@@ -84,7 +91,7 @@ const MobileMenu = () => {
               {navLinksArray.map((link, index) => (
                 <a
                   key={index}
-                  href={`#${link.href}`}
+                  href={link.href}
                   onClick={toggleMenu}
                   className="
                   relative 
@@ -108,60 +115,29 @@ const MobileMenu = () => {
             <div className="border-t border-white/20" />
 
             {/* Mobile Social Links */}
-            <div
-              className="
-                flex 
-                items-center
-                px-4
-                py-4
-              "
-            >
-              <motion.a
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  delay: 0.2,
-                  duration: 0.8,
-                }}
-                href="https://github.com/MurdoCodes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
-              >
-                <FiGithub className="w-5 h-5" />
-              </motion.a>
+            <div className="flex items-center gap-4 px-4 py-4">
+              {socialLinks.map((link, index) => {
+                const Icon = iconMap[link.icon];
+                return (
+                  <motion.a
+                    key={link.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      delay: 0.2 + index * 0.1,
+                      duration: 0.8,
+                    }}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
+                    aria-label={link.name}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </motion.a>
+                );
+              })}
 
-              <motion.a
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  delay: 0.2,
-                  duration: 0.8,
-                }}
-                href="https://github.com/MurdoCodes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
-              >
-                <FiLinkedin className="w-5 h-5" />
-              </motion.a>
-
-              <motion.a
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  delay: 0.2,
-                  duration: 0.8,
-                }}
-                href="https://github.com/MurdoCodes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-primary-hover hover:scale-[1.02] font-medium transition-colors duration-300 group"
-              >
-                <FiInstagram className="w-5 h-5" />
-              </motion.a>
-
-              {/* Hire Me Button */}
               <motion.button
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}

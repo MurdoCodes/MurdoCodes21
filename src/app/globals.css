@@ -91,7 +91,7 @@
   
   /* Fonts */
   --font-sans: var(--font-sans);
-  --font-display: var(--font-display);
+  --font-family-display: var(--font-display);
   --font-mono: var(--font-mono);
 
   --background-image-hero-pattern: url('/hero.png');
@@ -103,9 +103,9 @@
    ============================================================================= */
 
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: auto;
-  padding: auto;
+  /* box-sizing: border-box; */
+  /* margin: auto; */
+  /* padding: auto; */
 }
 
 html, body {
