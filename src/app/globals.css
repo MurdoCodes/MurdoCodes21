@@ -139,3 +139,22 @@ body {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
+
+@keyframes tech-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-tech-marquee {
+  animation: tech-marquee var(--marquee-duration, 20s) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tech-marquee {
+    animation: none;
+  }
+}
