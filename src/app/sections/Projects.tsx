@@ -15,6 +15,7 @@ import {
 } from "react-icons/si";
 import { FiCloud } from "react-icons/fi";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import TechMarquee from "@/components/ui/TechMarquee";
 import { projectsData } from "@/const/const";
 
 const techIconMap: Record<string, ReactNode> = {
@@ -46,13 +47,17 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
           {projectsData.map((project, index) => (
-            <ScrollReveal key={project.title} delay={index * 0.08}>
+            <ScrollReveal
+              key={project.title}
+              delay={index * 0.08}
+              className="h-full"
+            >
               <motion.article
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="group bg-card border border-border rounded-2xl overflow-hidden transition-shadow duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] hover:border-primary/20"
+                className="group flex h-full flex-col bg-card border border-border rounded-2xl overflow-hidden transition-shadow duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] hover:border-primary/20"
               >
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className="relative aspect-[16/10] shrink-0 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -63,30 +68,18 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-80" />
                 </div>
 
-                <div className="p-5 md:p-6">
-                  <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                <div className="flex flex-1 flex-col p-5 md:p-6">
+                  <h3 className="font-display text-xl font-bold text-foreground mb-2 line-clamp-2 min-h-[2.75rem]">
                     {project.title}
                   </h3>
-                  <p className="text-text-secondary text-sm leading-relaxed mb-5">
+                  <p className="text-text-secondary text-sm leading-relaxed mb-5 line-clamp-3 min-h-[4.125rem] flex-1">
                     {project.description}
                   </p>
 
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-primary-soft">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          title={tech}
-                          className="p-1.5 rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
-                        >
-                          {techIconMap[tech] ?? (
-                            <span className="text-xs font-medium">{tech}</span>
-                          )}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="mt-auto flex items-center gap-4">
+                    <TechMarquee tech={project.tech} iconMap={techIconMap} />
 
-                    <div className="flex gap-3 text-sm">
+                    <div className="flex gap-3 text-sm shrink-0">
                       {project.liveUrl && (
                         <a
                           href={project.liveUrl}
