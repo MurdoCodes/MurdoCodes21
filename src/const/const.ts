@@ -76,44 +76,69 @@ type Project = {
 
 const projectsData: Project[] = [
   {
-    title: "E-Commerce Platform",
+    title: "Ascarma Company Portfolio",
     description:
-      "A full-stack online store with real-time inventory, secure checkout, and an admin dashboard for managing products and orders.",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop",
-    tech: ["React", "Node.js", "PostgreSQL"],
-    liveUrl: "#",
-    repoUrl: "https://github.com/MurdoCodes",
+      "A corporate portfolio website for Ascarma Company, built on a modern, full-stack architecture utilizing Payload CMS, Next.js, and PostgreSQL.",
+    image: "/projects/ascarma.png",
+    tech: ["React", "Next.js", "Payload CMS", "Node.js", "PostgreSQL"],
+    liveUrl: "https://ascarma.com.au/",
+    repoUrl: "#",
   },
   {
-    title: "AI Automation Suite",
+    title: "XRAY AI Automation",
     description:
-      "A SaaS toolkit for web scraping, data extraction, and workflow automation powered by Puppeteer and AI integrations.",
-    image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop",
-    tech: ["TypeScript", "Puppeteer", "AWS"],
-    liveUrl: "#",
-    repoUrl: "https://github.com/MurdoCodes",
+      "A web automation platform for XRAY AI, designed to audit website health, evaluate AI search engine visibility, and perform comprehensive digital performance checks.",
+    image: "/projects/xray-ai.png",
+    tech: [
+      "Next.js",
+      "Tailwind",
+      "Node.js",
+      "PostgreSQL",
+      "Anthropic",
+      "Perplixity",
+      "OpenAI",
+      "Playwright",
+      "Stripe",
+      "Brevo",
+    ],
+    liveUrl: "https://xrayai.online/",
+    repoUrl: "#",
   },
   {
-    title: "Mobile Fitness Tracker",
+    title: "Credit SideKick",
     description:
-      "A cross-platform React Native app for tracking workouts, setting goals, and visualizing progress with offline support.",
-    image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=500&fit=crop",
-    tech: ["React Native", "Firebase", "TypeScript"],
-    liveUrl: "#",
-    repoUrl: "https://github.com/MurdoCodes",
+      "A self-service credit management platform that enables users to monitor their credit, access financial education, and repair their credit reports, currently onboarding founding members ahead of its iOS and Android app launch.",
+    image: "/projects/credit-sidekick.png",
+    tech: [
+      "React Native",
+      "Expo",
+      "Firebase",
+      "TypeScript",
+      "Tailwind",
+      "nativewind",
+      "redux",
+      "zustand",
+      "nodejs",
+      "express.js",
+      "aws",
+      "postmark",
+      "stripe",
+      "socket.io",
+      "redis",
+      "prisma",
+      "Google Gemini",
+    ],
+    liveUrl: "https://creditsidekick.ai/",
+    repoUrl: "#",
   },
   {
-    title: "Portfolio CMS",
+    title: "Live Traders",
     description:
-      "A headless CMS-powered portfolio builder with dynamic content management, SEO optimization, and blazing-fast delivery.",
-    image:
-      "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=500&fit=crop",
-    tech: ["Next.js", "Tailwind", "Node.js"],
-    liveUrl: "#",
-    repoUrl: "https://github.com/MurdoCodes",
+      "A real-time live trading platform built on WordPress, utilizing a custom plugin for core business logic, Red5Pro WebRTC for low-latency live video streaming, and Socket.IO for instant data communication.",
+    image: "/projects/livetraders.png",
+    tech: ["WordPress", "Node.js", "Express.js", "Socket.IO", "Red5Pro WebRTC"],
+    liveUrl: "https://livetraders.com/",
+    repoUrl: "#",
   },
 ];
 
