@@ -1,50 +1,78 @@
 import Reveal from "./Reveal";
 
-type Skill = { name: string; level: 1 | 2 | 3 | 4 };
-type Column = { title: string; skills: Skill[] };
+type Category = { title: string; skills: string[] };
 
-const columns: Column[] = [
+const categories: Category[] = [
   {
-    title: "FRONTEND",
+    title: "LANGUAGES",
     skills: [
-      { name: "React / Next.js", level: 4 },
-      { name: "TypeScript", level: 4 },
-      { name: "Tailwind CSS", level: 3 },
-      { name: "React Native", level: 3 },
+      "TypeScript",
+      "JavaScript",
+      "PHP",
+      "SQL / NoSQL",
+      "HTML5",
+      "CSS3",
+      "XML",
+      "JSON",
     ],
   },
   {
-    title: "BACKEND",
+    title: "FRAMEWORKS",
     skills: [
-      { name: "Node.js / Express", level: 4 },
-      { name: "PostgreSQL", level: 3 },
-      { name: "Payload CMS", level: 3 },
-      { name: "AWS", level: 2 },
+      "React",
+      "React Native",
+      "Expo",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "Laravel",
+      "Vue.js",
+      "Prisma ORM",
+      "Tailwind CSS",
+      "WordPress",
     ],
   },
   {
-    title: "AI & AUTOMATION",
+    title: "DATABASES",
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "Firebase"],
+  },
+  {
+    title: "CLOUD & DEVOPS",
+    skills: ["AWS", "Docker", "Git", "Vagrant", "Nginx", "PM2", "Linux (Ubuntu)"],
+  },
+  {
+    title: "AI & LLM",
     skills: [
-      { name: "Puppeteer / Playwright", level: 4 },
-      { name: "OpenAI / Anthropic APIs", level: 3 },
-      { name: "Socket.IO", level: 3 },
-      { name: "Docker / CI-CD", level: 2 },
+      "OpenAI (GPT-4, Assistants API)",
+      "Google Gemini AI",
+      "Google AI Studio",
+      "Anthropic Claude API",
+      "Perplexity API",
+      "ElevenLabs",
+      "AI Agent Development",
+      "Prompt Engineering",
+      "Function / Tool Calling",
+      "RAG",
+      "AI Voice Integrations",
+      "AI Workflow Automation",
+    ],
+  },
+  {
+    title: "INTEGRATIONS & APIS",
+    skills: [
+      "Stripe",
+      "Twilio",
+      "Postmark",
+      "Brevo",
+      "AWS SDK",
+      "Axios",
+      "SVIX",
+      "Puppeteer",
+      "WebSocket / Socket.IO",
+      "WebRTC",
     ],
   },
 ];
-
-function Dots({ level }: { level: number }) {
-  return (
-    <div className="flex gap-1.5">
-      {[1, 2, 3, 4].map((i) => (
-        <span
-          key={i}
-          className={`w-1.5 h-1.5 rounded-full ${i <= level ? "bg-ember" : "bg-line"}`}
-        />
-      ))}
-    </div>
-  );
-}
 
 export default function Skills() {
   return (
@@ -55,23 +83,19 @@ export default function Skills() {
           Technologies and tools I use to build reliable, scalable products.
         </h2>
         <p className="text-muted text-sm mt-3">
-          Dots show working depth — not a made-up percentage.
+          Full stack coverage from frontend and mobile through AI, automation, and cloud.
         </p>
       </Reveal>
 
-      <div className="grid md:grid-cols-3 gap-px bg-line border border-line mt-14">
-        {columns.map((col, i) => (
-          <Reveal key={col.title} delay={i * 100} className="bg-bg p-8">
-            <h3 className="section-tag mb-5">{col.title}</h3>
-            <div className="space-y-0">
-              {col.skills.map((s) => (
-                <div
-                  key={s.name}
-                  className="flex justify-between items-center py-2.5 border-b border-line last:border-none text-[14.5px]"
-                >
-                  <span>{s.name}</span>
-                  <Dots level={s.level} />
-                </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line mt-14">
+        {categories.map((category, i) => (
+          <Reveal key={category.title} delay={i * 80} className="bg-bg p-8">
+            <h3 className="section-tag mb-5">{category.title}</h3>
+            <div className="flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <span key={skill} className="stack-tag text-[10.5px] px-2.5 py-1.5">
+                  {skill}
+                </span>
               ))}
             </div>
           </Reveal>
