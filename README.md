@@ -1,39 +1,59 @@
-# MurdoCodes21
-A sleek, animation-driven portfolio built with Next.js. Admin dashboard &amp; backend integrations currently in development.
+# MurdoCodes Portfolio
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Kinetic-portfolio redesign: Next.js 14 (App Router) + Tailwind + Framer Motion,
+with a standalone Express service for the contact form and a data layer
+that's pre-shaped for a future Payload CMS swap.
 
-## Getting Started
+## Structure
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+app/                Next.js App Router pages
+  page.tsx          Home (hero, about, skills, projects, contact)
+  projects/[slug]/  Case-study page per project
+  api/contact/      Route that forwards submissions to the Express service
+components/         All UI pieces (Hero, Skills, ProjectCard, AscentRail, etc.)
+data/projects.ts    Placeholder "database" — swap for Payload fetches later
+lib/payload.ts      Fetch helper stub for the future Payload CMS instance
+server/             Standalone Express API (contact form email sending)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run the frontend
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Visit http://localhost:3000.
 
-## Learn More
+## Run the backend (optional for local dev)
 
-To learn more about Next.js, take a look at the following resources:
+The contact form works without this — it just logs to the console if
+`EXPRESS_API_URL` isn't set. To wire up real email sending:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cd server
+npm install
+cp .env.example .env
+# add your Resend API key
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Then set `EXPRESS_API_URL=http://localhost:3001` in the root `.env.local`.
 
-## Deploy on Vercel
+## Adding Payload CMS later
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. `npx create-payload-app@latest` in a new `cms/` folder (or deploy separately)
+2. Define a `Projects` collection with fields matching `data/projects.ts`
+   (slug, name, summary, problem, role, outcome, stack, liveUrl)
+3. Set `PAYLOAD_URL` in `.env.local`
+4. Replace the bodies of `getProjects()` / `getProjectBySlug()` in
+   `data/projects.ts` with calls through `lib/payload.ts` — no component
+   changes needed since the `Project` type stays the same
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+- Frontend → Vercel (zero-config for Next.js)
+- Express service → Railway or Render
+- Payload CMS (when added) → Railway/Render with a managed Postgres instance
