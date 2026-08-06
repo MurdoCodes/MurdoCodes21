@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import Contours from "@/components/Contours";
 import Nav from "@/components/Nav";
@@ -40,6 +41,17 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             {project.name}
           </h1>
           <p className="text-muted mt-5 text-lg leading-relaxed">{project.summary}</p>
+
+          <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-md border border-line">
+            <Image
+              src={project.image}
+              alt={project.name}
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
 
           <div className="flex flex-wrap gap-2.5 mt-7">
             {project.stack.map((tag) => (

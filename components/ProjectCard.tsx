@@ -4,9 +4,13 @@ import type { Project } from "@/data/projects";
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="bg-card border border-line rounded-md overflow-hidden">
-      <div className="relative h-48 flex items-center justify-center font-display text-[15px] text-muted">
-        <div className="absolute inset-0 bg-gradient-to-br from-ember/10 to-transparent" />
-        <span className="relative">{project.thumbLabel}</span>
+      <div
+        className="relative h-48 bg-cover bg-center"
+        style={{ backgroundImage: `url(${project.image})` }}
+        role="img"
+        aria-label={project.name}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-card/20 to-transparent" />
       </div>
       <div className="p-7">
         <h3 className="font-display text-xl font-medium mb-2.5">{project.name}</h3>
