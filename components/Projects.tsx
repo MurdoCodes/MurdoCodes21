@@ -11,7 +11,7 @@ export default function Projects() {
         <h2 className="font-display text-3xl md:text-4xl font-medium max-w-lg">
           Featured work — case studies, not just screenshots.
         </h2>
-        <div className="section-tag">// 03 — PROJECTS</div>
+        <div className="section-tag">{"// 03 — PROJECTS"}</div>
       </Reveal>
 
       <div className="grid md:grid-cols-2 gap-7">

@@ -31,7 +31,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative z-5 px-6 md:px-16 py-28 text-center">
       <Reveal>
-        <div className="section-tag flex justify-center mb-4">// 04 — CONTACT</div>
+        <div className="section-tag flex justify-center mb-4">{"// 04 — CONTACT"}</div>
         <h2 className="font-display text-3xl md:text-5xl font-medium max-w-2xl mx-auto">
           Have a project, or a role worth climbing toward?
         </h2>

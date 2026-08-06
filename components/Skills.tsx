@@ -50,7 +50,7 @@ export default function Skills() {
   return (
     <section id="skills" className="relative z-5 px-6 md:px-16 py-24">
       <Reveal>
-        <div className="section-tag mb-4">// 02 — TOOLBOX</div>
+        <div className="section-tag mb-4">{"// 02 — TOOLBOX"}</div>
         <h2 className="font-display text-3xl md:text-4xl font-medium max-w-xl">
           Technologies and tools I use to build reliable, scalable products.
         </h2>
