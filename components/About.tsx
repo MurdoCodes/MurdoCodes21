@@ -12,7 +12,7 @@ export default function About() {
   return (
     <section id="about" className="relative z-5 px-6 md:px-16 py-24 grid md:grid-cols-2 gap-14 items-start">
       <Reveal>
-        <div className="section-tag mb-4">// 01 — ABOUT</div>
+        <div className="section-tag mb-4">{"// 01 — ABOUT"}</div>
         <h2 className="font-display text-3xl md:text-4xl font-medium leading-tight max-w-md">
           Ships production code the way you&apos;d plan a route: methodically,
           with a fallback for everything.

@@ -1,7 +1,7 @@
 export type Project = {
   slug: string;
   name: string;
-  thumbLabel: string;
+  image: string;
   summary: string;
   problem: string;
   role: string;
@@ -20,7 +20,7 @@ const projects: Project[] = [
   {
     slug: "ascarma-company-portfolio",
     name: "Ascarma Company Portfolio",
-    thumbLabel: "ASCARMA",
+    image: "/projects/ascarma.png",
     summary:
       "A corporate portfolio website for Ascarma Company, built on a modern, full-stack architecture utilizing Payload CMS, Next.js, and PostgreSQL.",
     problem:
@@ -35,7 +35,7 @@ const projects: Project[] = [
   {
     slug: "xray-ai-automation",
     name: "XRAY AI Automation",
-    thumbLabel: "XRAY AI",
+    image: "/projects/xray-ai.png",
     summary:
       "A web automation platform for XRAY AI, designed to audit website health, evaluate AI search engine visibility, and perform comprehensive digital performance checks.",
     problem:
@@ -50,7 +50,7 @@ const projects: Project[] = [
   {
     slug: "credit-sidekick",
     name: "Credit SideKick",
-    thumbLabel: "CREDIT SIDEKICK",
+    image: "/projects/credit-sidekick.png",
     summary:
       "A self-service credit management platform enabling users to monitor their credit, access financial education, and repair their credit reports, currently onboarding founding members ahead of its iOS and Android app launch.",
     problem:
@@ -79,7 +79,7 @@ const projects: Project[] = [
   {
     slug: "live-traders",
     name: "Live Traders",
-    thumbLabel: "LIVE TRADERS",
+    image: "/projects/livetraders.png",
     summary:
       "A real-time live trading platform built on WordPress, utilizing a custom plugin for core business logic, Red5Pro WebRTC for low-latency live video streaming, and Socket.IO for instant data communication.",
     problem:
